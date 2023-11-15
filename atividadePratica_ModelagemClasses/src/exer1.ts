@@ -1,8 +1,5 @@
 class Accountant {
-    private accountant: number;
-    constructor(){
-        this.accountant = 0
-    }
+    constructor(public accountant: number){}
 
     reset(): void {
         this.accountant = 0
@@ -17,7 +14,7 @@ class Accountant {
     };
 }
 
-let accountant = new Accountant();
+let accountant = new Accountant(34);
 
 console.log(accountant.turnBack())
 

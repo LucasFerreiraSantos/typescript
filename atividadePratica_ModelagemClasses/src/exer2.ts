@@ -1,13 +1,5 @@
 class Ball {
-    color: string;
-    circumference: number;
-    material: string;
-
-    constructor(color: string, circumference: number, material: string){
-        this.color = color
-        this.circumference = circumference
-        this.material = material
-    }
+    constructor(public color: string, public circumference: number, public material: string){}
 
     changeColor(newColor: string): void{
         this.color = newColor
