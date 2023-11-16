@@ -1,4 +1,40 @@
+class Car {
+  constructor(
+    private vehicletype: string,
+    private vehicleConsumption: number,
+    private fuelInTank: number = 0
+  ) {}
 
+  get vehicle(): object {
+    return {
+      tipoDoVeiculo: this.vehicletype,
+      consumoDoVeiculo: this.vehicleConsumption,
+      quantidadeNoTanque: this.fuelInTank,
+    };
+  }
+
+  toWalk(kilometerTraveled: number): string {
+    const resultWalk = Math.ceil(kilometerTraveled / this.vehicleConsumption);
+    this.fuelInTank -= resultWalk;
+    return `O veículo rodou ${kilometerTraveled}Km e consumiu o total de ${resultWalk} litros.\nAinda resta no tanque ${this.fuelInTank} litros.`;
+  }
+
+  addGasoline(quantifyGasoline: number): string {
+    this.fuelInTank += quantifyGasoline;
+    return `Foi adicionado ${quantifyGasoline} litros de combustível ao tanque.`;
+  }
+
+  getGasoline(): string {
+    return `A quantidade de combustível atual é ${this.fuelInTank} litros.`;
+  }
+}
+
+const myHondaCivic = new Car("Honda Civic", 13);
+console.log(myHondaCivic.vehicle);
+console.log(myHondaCivic.addGasoline(100));
+console.log(myHondaCivic.vehicle);
+console.log(myHondaCivic.getGasoline());
+console.log(myHondaCivic.toWalk(300));
 
 // 6. Implemente uma classe chamada Carro com as seguintes
 // propriedades:
