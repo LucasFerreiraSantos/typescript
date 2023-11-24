@@ -1,16 +1,23 @@
 class Order {
-  constructor(private items: Items[] = [], private valueTotal: number = 0) {}
+  constructor(private _items: Items[] = [], private _valueTotal: number = 0) {}
+  get items(): Array<Items> {
+    return this._items;
+  }
+
+  get valueTotal(): number {
+    return this._valueTotal;
+  }
 }
 
 class Items {
   constructor(
-    private value: number,
+    private _value: number,
     private name: string,
     private description: string
   ) {}
 
-  get valueItem(): number {
-    return this.value;
+  get value(): number {
+    return this._value;
   }
 
   itemPurchased() {
@@ -20,4 +27,4 @@ class Items {
   }
 }
 
-const items = new Items(20, "Batata", "Com frango.");
+export { Order, Items }
