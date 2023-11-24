@@ -5,7 +5,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "CommonJS",
-    "rootDir": "./src/exer1",
+    "rootDir": "./src",
     "outDir": "dist",
     "esModuleInterop": true,
     "resolveJsonModule": true,

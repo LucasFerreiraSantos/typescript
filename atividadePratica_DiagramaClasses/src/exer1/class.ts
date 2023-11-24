@@ -1,30 +1,13 @@
 class Order {
-  constructor(private _items: Items[] = [], private _valueTotal: number = 0) {}
-  get items(): Array<Items> {
-    return this._items;
-  }
-
-  get valueTotal(): number {
-    return this._valueTotal;
-  }
+  constructor(public items: Items[] = [], public valueTotal: number = 0) {}
 }
 
 class Items {
   constructor(
-    private _value: number,
-    private name: string,
-    private description: string
+    public value: number,
+    public name: string,
+    public description: string
   ) {}
-
-  get value(): number {
-    return this._value;
-  }
-
-  itemPurchased() {
-    console.log(
-      `O item ${this.name} no valor de ${this.value}, ${this.description}, adicionado ao pedido.`
-    );
-  }
 }
 
-export { Order, Items }
+export { Order, Items };

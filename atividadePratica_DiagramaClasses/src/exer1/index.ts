@@ -1,15 +1,15 @@
 import { Order } from "./class";
 import { Items } from "./class";
 
+const order = new Order();
+const items = new Items(20, "Sabão", "Em pó");
 
-const order = new Order()
-const items = new Items(20, "Sabão", "Em pó")
+console.log(order.items);
+console.log(order.valueTotal);
 
-console.log(order.items)
-
-console.log(order.valueTotal)
-
-items.itemPurchased()
+console.log(items.name);
+console.log(items.value);
+console.log(items.description);
 
 // 1. Implemente e teste o modelo de classes com base na seguinte
 // imagem:
